@@ -1,0 +1,11 @@
+select * from Student;
+create or replace function LoginExist(p_login in char)
+return Varchar2
+as
+s_student Student%ROWTYPE;
+begin
+ SELECT * INTO s_student from Student WHERE login = p_login;
+ if s_student.login = p_login then 
+  RETURN 'OK';
+ END IF;
+end;

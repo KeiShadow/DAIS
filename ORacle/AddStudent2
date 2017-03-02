@@ -1,0 +1,13 @@
+SET SERVEROUTPUT ON;
+CREATE OR REPLACE PROCEDURE AddStudent2(p_lname in varchar2, p_fname in VARCHAR2) as
+gen_login char(6);
+begin
+  gen_login:=substr(p_lname,1,3) || '000';
+ INSERT INTO Student VALUES(gen_login,p_lname,p_fname);
+  dbms_output.put_line('Student se jmenem: '||p_lname||' byl uspesne vlozen do tabulky Student');
+  COMMIT;
+  exception --Vyjimky
+   WHEN OTHERS THEN
+    dbms_output.put_line('Student s loginem: '||gen_login||' jiz v tabulce Student existuje');
+rollback;
+end;

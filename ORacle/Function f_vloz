@@ -1,0 +1,7 @@
+create or replace function f_vloz 
+return varchar2
+as
+BEGIN
+ INSERT INTO Student VALUES('uga123','Ugandi','Alhamar');
+  RETURN 'ok';
+END;
