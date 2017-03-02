@@ -1,0 +1,37 @@
+Oracle:
+dbms_output_putline('...') // vypis konzole
+|| //spojovani promennych s retezci
+creater or replace //funkce
+execute nazev('..') //spousteni funkce, parametry v zavorkach
+/*Promenne*/
+AS
+ nazev typ
+ 
+begin
+ prem1:='..';
+ select atribut into prem2 from.......
+/*Vyjimky*/
+ Exception
+  when other then
+   ....
+ END;
+
+
+MSSQL
+print '...';
++ // spojovoani promennych s retezci
+create..
+alter...
+/*Promenne*/
+Begin
+  Begin try
+    DECLARE @prem1 typ;
+    DECLARE @prem2 typ;
+    set @prem1 = '..' // pridani hodnoty do promenne
+    select @prem2 = atribut from....
+    /*Cursor nema pred sebou zavinac*/
+  Begin end;
+  Begin catch
+  
+  End catch
+End;
